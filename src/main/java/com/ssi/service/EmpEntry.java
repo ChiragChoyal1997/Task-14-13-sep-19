@@ -10,8 +10,7 @@ public class EmpEntry {
 
 	public static void main(String[] args) {
 		
-		EmpDao empdao = new EmpDao();
-		Session session = empdao.getSession();  
+		Session session = EmpDao.getSession();  
 		
 		Employee e1=new Employee(111,"AAA",50000);
 		Employee e2=new Employee(112,"BBB",60000);

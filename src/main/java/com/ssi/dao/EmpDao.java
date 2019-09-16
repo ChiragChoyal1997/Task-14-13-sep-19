@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 public class EmpDao {
 
-	public Session getSession() {
+	public static Session getSession() {
 		Configuration config=new Configuration().configure();
 		SessionFactory sf=config.buildSessionFactory();
 		Session session=sf.openSession();

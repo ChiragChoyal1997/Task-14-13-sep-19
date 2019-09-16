@@ -8,11 +8,10 @@ import com.ssi.model.Employee;
 
 public class EmpRetrieve {
 	public static void main(String args[]) {
-		EmpDao empdao = new EmpDao();
-		Session session = empdao.getSession();
-	
+		
+		Session session = EmpDao.getSession();
 		Transaction tr = session.beginTransaction();
-		Employee e = (Employee)session.get(Employee.class,11);
+		Employee e = (Employee)session.get(Employee.class,111);
 		tr.commit();
 		session.close();
 		if(e != null) {

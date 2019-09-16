@@ -12,15 +12,10 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>5.4.0.Final</version>
 		</dependency>
+		
+		<!--  Due to Oracle license restriction, there are no public repositories that provide ojdbc jar.
 
-		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.40</version>
-		</dependency>
-
-
-
+You need to download it and install in your local repository. Get jar from Oracle and install it in your local maven repository. -->
+		
 	</dependencies>
 </project>

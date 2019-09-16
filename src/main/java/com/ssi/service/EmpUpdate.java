@@ -9,19 +9,22 @@ import com.ssi.model.Employee;
 public class EmpUpdate {
 	
 	public static void main(String args[]) {
-		EmpDao empdao = new EmpDao();
-		Session session = empdao.getSession();
-		
-		Employee e = new Employee();
-		e.setEno(114);
-		
-		//Updating employee name of employee having eno=113
-		e.setEname("Deva");
-		e.setSal(0);
+
+		Session session = EmpDao.getSession();
 		
 		Transaction tr=session.beginTransaction();
-		session.update(e);
-		tr.commit();
-		System.out.println("Record Updated!");
-	}
+		Employee e = (Employee)session.get(Employee.class,111);
+		//Updating employee name of employee having eno=113
+		if(e != null) {
+			e.setEname("Deva");
+			e.setSal(50000);
+			session.update(e);
+			System.out.println("Employee updated!");
+		}
+		else {
+			System.out.println("Employee not found");
+		}
+			tr.commit();
+			session.close();
+		}
 }
